@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc"><title id="title">Inside a Raft node</title><desc id="desc">Incoming gRPC requests and three background workers access mutex-protected consensus state. Committed entries are delivered to an application queue.</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#6aa9ff"/></marker></defs><rect width="1200" height="650" rx="24" fill="#0b1220"/>
+<text x="48" y="54" fill="#59dfb6" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">ARCHITECTURE / ONE NODE</text>
+<text x="48" y="101" fill="#edf4ff" font-family="Arial, Helvetica, sans-serif" font-size="35" font-weight="700">Concurrent workers. Coordinated state.</text>
+<rect x="48" y="145" width="338" height="108" rx="14" fill="#142136" stroke="#6aa9ff" stroke-opacity="0.6"/>
+<text x="70" y="179" fill="#6aa9ff" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">gRPC service</text>
+<text x="70" y="211" fill="#9bafca" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400">RequestVote · AppendEntries</text>
+<rect x="435" y="145" width="330" height="108" rx="14" fill="#142136" stroke="#6aa9ff" stroke-opacity="0.6"/>
+<text x="457" y="179" fill="#6aa9ff" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">Peer RPC clients</text>
+<text x="457" y="211" fill="#9bafca" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400">Deadlines · outgoing calls</text>
+<rect x="814" y="145" width="338" height="108" rx="14" fill="#142136" stroke="#6aa9ff" stroke-opacity="0.6"/>
+<text x="836" y="179" fill="#6aa9ff" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">Proposal API</text>
+<text x="836" y="211" fill="#9bafca" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400">propose · propose_sync</text>
+<path d="M217 253 L217 300" stroke="#6aa9ff" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+<path d="M600 300 L600 253" stroke="#6aa9ff" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+<path d="M984 253 L984 300" stroke="#6aa9ff" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+<rect x="48" y="304" width="1104" height="114" rx="14" fill="#142136" stroke="#59dfb6" stroke-opacity="0.6"/>
+<text x="70" y="338" fill="#59dfb6" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">Consensus state / mutex protected</text>
+<text x="70" y="370" fill="#9bafca" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400">Role · current term · voted-for · replicated log · commit index · last-applied</text>
+<text x="70" y="397" fill="#9bafca" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400">Leader progress: next_index and match_index for each follower</text>
+<path d="M214 418 L214 456" stroke="#6aa9ff" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+<rect x="48" y="460" width="338" height="126" rx="14" fill="#142136" stroke="#b9a1ff" stroke-opacity="0.6"/>
+<text x="70" y="494" fill="#b9a1ff" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">Election worker</text>
+<text x="70" y="526" fill="#9bafca" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400">Random timeout</text>
+<text x="70" y="553" fill="#9bafca" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400">Start elections</text>
+<path d="M601 418 L601 456" stroke="#6aa9ff" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+<rect x="435" y="460" width="338" height="126" rx="14" fill="#142136" stroke="#b9a1ff" stroke-opacity="0.6"/>
+<text x="457" y="494" fill="#b9a1ff" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">Heartbeat worker</text>
+<text x="457" y="526" fill="#9bafca" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400">Replicate log entries</text>
+<text x="457" y="553" fill="#9bafca" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400">Maintain leadership</text>
+<path d="M980 418 L980 456" stroke="#6aa9ff" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+<rect x="814" y="460" width="338" height="126" rx="14" fill="#142136" stroke="#b9a1ff" stroke-opacity="0.6"/>
+<text x="836" y="494" fill="#b9a1ff" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">Application worker</text>
+<text x="836" y="526" fill="#9bafca" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400">Advance application</text>
+<text x="836" y="553" fill="#9bafca" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400">Enqueue committed entries</text>
+<text x="48" y="625" fill="#9bafca" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400">Network waits occur outside the consensus-state lock.</text>
+</svg>

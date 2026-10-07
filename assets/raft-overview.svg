@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="570" viewBox="0 0 1200 570" role="img" aria-labelledby="title desc"><title id="title">Raft consensus engine</title><desc id="desc">C++20 and gRPC consensus. A leader sends log entries to two followers; two of three replicas form a majority.</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#6aa9ff"/></marker></defs><rect width="1200" height="570" rx="24" fill="#0b1220"/>
+<text x="48" y="52" fill="#59dfb6" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">DISTRIBUTED SYSTEMS / C++20 + gRPC</text>
+<text x="48" y="114" fill="#edf4ff" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700">Raft Consensus Engine</text>
+<text x="48" y="156" fill="#9bafca" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400">Leader election. Replicated logs. Majority-based commits.</text>
+<rect x="48" y="232" width="230" height="112" rx="14" fill="#142136" stroke="#6aa9ff" stroke-opacity="0.6"/>
+<text x="70" y="266" fill="#6aa9ff" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">Client</text>
+<text x="70" y="298" fill="#9bafca" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400">Propose a command</text>
+<rect x="365" y="232" width="320" height="145" rx="14" fill="#142136" stroke="#59dfb6" stroke-opacity="0.6"/>
+<text x="387" y="266" fill="#59dfb6" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">Leader</text>
+<text x="387" y="298" fill="#9bafca" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400">Append to local log</text>
+<text x="387" y="325" fill="#9bafca" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400">Track follower progress</text>
+<rect x="820" y="208" width="330" height="112" rx="14" fill="#142136" stroke="#6aa9ff" stroke-opacity="0.6"/>
+<text x="842" y="242" fill="#6aa9ff" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">Follower A</text>
+<text x="842" y="274" fill="#9bafca" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400">Validate + replicate</text>
+<rect x="820" y="361" width="330" height="112" rx="14" fill="#142136" stroke="#6aa9ff" stroke-opacity="0.6"/>
+<text x="842" y="395" fill="#6aa9ff" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">Follower B</text>
+<text x="842" y="427" fill="#9bafca" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400">Validate + replicate</text>
+<path d="M278 285 L365 285" stroke="#6aa9ff" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+<path d="M685 267 L820 267" stroke="#6aa9ff" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+<path d="M685 310 H744 V413 H820" fill="none" stroke="#6aa9ff" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="49" y="447" fill="#59dfb6" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700">2 / 3</text>
+<text x="205" y="425" fill="#edf4ff" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">A majority unlocks commit</text>
+<text x="205" y="456" fill="#9bafca" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400">Example: leader + one follower</text>
+<text x="48" y="531" fill="#9bafca" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">INDIVIDUAL LAB IMPLEMENTATION</text>
+<text x="795" y="531" fill="#9bafca" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">KARTHIK VENUGOPAL / USC</text>
+</svg>
